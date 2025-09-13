@@ -1,0 +1,21 @@
+<Window x:Class="ChessApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ChessApp" Height="600" Width="520" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <UniformGrid x:Name="BoardGrid" Rows="8" Columns="8" Margin="10"/>
+        <StackPanel Grid.Column="1" Margin="10" VerticalAlignment="Top">
+            <TextBlock Text="Turn:" FontWeight="Bold"/>
+            <TextBlock x:Name="TurnText" Margin="0,0,0,10"/>
+            <Button x:Name="NewGameBtn" Content="New Game" Click="NewGame_Click" Margin="0,0,0,10"/>
+            <Button x:Name="UndoBtn" Content="Undo" Click="Undo_Click"/>
+            <ScrollViewer Height="450" Margin="0,10,0,0">
+                <StackPanel x:Name="MovesPanel"/>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>
